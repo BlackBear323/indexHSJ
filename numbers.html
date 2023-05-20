@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>пункти</title>
+</head>
+<body>
+    <style>
+        body{
+            font-family: Tahoma;
+            background-color: lightblue;
+        }
+        .list{
+            border: 1px solid black;
+        }
+    </style>
+    <script>
+        function AddItem(){
+            var newItem = document.createElement("div");
+            newItem.innerHTML = document.getElementById("box").value;
+            newItem.onclick = removeItem;
+            document.getElementById("list").appendChild(newItem);
+        }
+        function removeItem() {
+            document.getElementById("list").removeChild(this)
+        }
+    </script>
+    <input type="text" id="box" value="Напиши тут завдання"/>
+    <br/>
+    <input type="button" value="Додати пункт" onclick="AddItem();">
+    <br/>
+    <div id="list"></div>
+</body>
+</html> 
